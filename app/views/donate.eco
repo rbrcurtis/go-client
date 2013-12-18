@@ -1,0 +1,27 @@
+<table class="outer" align="center">
+	<tr><td valign="middle">
+		<table>
+			<tr><td align="center"><div class="logo"></div></td></tr>
+			<tr><td>
+				Hosting an online game is expensive! We greatly appreciate your donations, and to show our gratitude, if you donate more than $1 we'll turn off all advertisements for you for an entire year.  Thanks so much.
+			</td></tr>
+		</table>
+		<table class="amounts" align="center">
+			<tr><td><input type="radio" name="amount" class="amount" id="amount3" value="3" checked="true"/><label for="amount3">$3</label></td></tr>
+			<tr><td><input type="radio" name="amount" class="amount" id="amount6" value="6" /><label for="amount6">$6</label></td></tr>
+			<tr><td><input type="radio" name="amount" class="amount" id="amount10" value="10" /><label for="amount10">$10</label></td></tr>
+			<tr><td>
+					<input type="radio" name="amount" class="amount" id="amount-other" value="other" /><label for="amount-other">Other</label>
+
+			</td></tr>
+			<tr><td align="center">
+					<label for="amount-other">
+						<input type="number" name="other" id="other-input" />
+					</label>
+			</td></tr>
+			
+			<tr><td><button class="donate-send">Donate</button></td></tr>
+		</table>
+		
+	</td></tr>
+</table>

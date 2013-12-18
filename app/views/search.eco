@@ -1,0 +1,26 @@
+<div class="outer">
+
+	<input type="text" id="search-box" name="search" placeholder="search by email or username" value="<%= @query %>" />
+	<table class="search-results" align="center">
+
+		<% for user in @searchResults or []: %>
+		
+		<tr><td>
+			
+			<div class="result" id="<%= user.id %>">
+				<table>
+					<tr>
+						<td rowspan="2" class="avatar"><img src="<%= user.avatar %>" /></td>
+						<td class="username"><%= user.username %></td>
+					</tr>
+					<tr><td class="rank">Rank: <%= user.rank %></td></tr>
+				</table>
+				<div class="star <%= if user.friend then 'selected' else 'unselected' %>"></div>
+			</div>
+			
+		</td></tr>
+
+		<% end %>
+	</table>
+
+</div>

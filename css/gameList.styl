@@ -1,0 +1,99 @@
+.game-list
+
+	.outer
+	
+		h1
+			font-size: 2em
+		h2
+			font-size: 1.5em
+		h3
+			font-size: 1em
+
+		h1, h2, h3
+			color: white
+			font-style: italic
+			display: block
+			text-align: center
+			padding: 0px
+			margin: 0px
+			text-shadow: #333 0px 3px 7px
+			
+	
+		table.inner
+			width: 90%
+			margin: auto auto
+			border-spacing: 2px 10px
+			
+			div.game
+				min-width: 260px
+				position: relative
+				top: 0px
+				left: 0px
+
+				&.turn
+					border: 2px solid green
+				
+				table
+					width: 100%
+					height: 100px
+					background: white
+					border: 2px solid black
+					padding: 5px
+
+					.avatar
+						width: 80px
+						
+						img
+							width: 80px
+							height: 80px
+
+						
+					.username
+						display: block
+						font-size: 2em
+						text-align: left
+						height: 40px
+						
+					.rank
+						font-family: sans-serif
+						text-align: left
+						height: 40px
+
+				.color
+					display: inline-block
+					width: 30px
+					height: 30px
+					position: absolute
+					right: 20px
+					bottom: 25px
+
+					&.black
+						background: url('img/stone-black.png') no-repeat 50% 50%
+						background-size: 100%
+
+					&.white
+						background: url('img/stone-black.png') no-repeat 50% 50%
+						background-size: 100%
+
+				.star
+					display: inline-block
+					width: 30px
+					height: 30px
+					position: absolute
+					right: 20px
+					top: 15px
+
+					&.selected
+						background: url('img/star-selected.png') no-repeat 50% 50%
+						background-size: 100%
+
+					&.unselected
+						background: url('img/star-unselected.png') no-repeat 50% 50%
+						background-size: 100%
+
+				.time
+					position: absolute
+					right: 10px
+					bottom: 10px
+					font-size: .7em
+				

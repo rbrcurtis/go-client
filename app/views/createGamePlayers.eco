@@ -1,0 +1,26 @@
+<table class="outer" align="center">
+	<tr><td valign="middle">
+		<div class="logo"></div>
+		<h1>New Game</h1>
+		<table class="inner" align="center">
+			<% for player in @players: %>
+			
+			<tr><td>
+				
+				<div class="player" id="<%= player.id %>">
+					<table>
+						<tr>
+							<td rowspan="2" class="avatar"><img src="<%= player.avatar %>" /></td>
+							<td class="username"><%= player.username %></td>
+						</tr>
+						<tr><td class="rank">Rank:<%= player.rank %></td></tr>
+					</table>
+				</div>
+				
+			</td></tr>
+			
+			<% end %>
+		</table>
+
+	</td></tr>
+</table>

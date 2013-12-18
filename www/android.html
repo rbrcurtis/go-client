@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Go Vs</title>
+		<HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE">
+		<meta name="viewport" content="width=device-width, user-scalable=yes" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta http-equiv="cache-control" content="no-cache" />
+		
+		<script src="application.js" type="text/javascript" charset="utf-8"></script>
+
+		<link rel="stylesheet" href="application.css" type="text/css" />
+
+
+		<script type="text/javascript" charset="utf-8">
+			var exports = this;
+			$(function() {
+				var App = require("index");
+				exports.app = new App({
+					el : $("body"),
+					android: true
+				});
+			});
+		</script>
+
+	</head>
+	<body></body>
+</html>

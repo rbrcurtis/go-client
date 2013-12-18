@@ -1,0 +1,26 @@
+<%- require('views/logo')() %>
+<table class="outer" align="center">
+	<tr><td valign="middle">
+		<table class="settings" align="center">
+			<tr><td colspan="2">
+				<div class="avatar"><img src="<%- me?.avatar %>&s=100" /></div>
+			</td></tr>
+			<tr><td>
+				<label for="settings-username">Username</label>
+			</td><td>
+				<input type="text" class="user-setting" id="settings-username" value="<%= me?.username %>"/>
+			</td></tr>
+			<tr><td>
+				<label for="settings-email">Email</label>
+			</td><td>
+				<input type="text" class="user-setting" id="settings-email" value="<%= me?.email %>"/>
+			</td></tr>
+			<!-- <tr><td colspan="2"><div class="notif">Receive Notifications<div class="check-img"/></div></td></tr> -->
+
+			<tr><td colspan="2">Connection to Server<div class="realtime"/></div></td></tr>
+
+			<!-- <tr><td><div class="logout">Logout</div></td></tr> -->
+			<tr><td colspan="2"><div class="donate" onclick="document.location.hash = '#/donate'">Donate</div></td></tr>
+		</table>
+	</td></tr>
+</table>

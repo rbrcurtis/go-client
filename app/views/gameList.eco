@@ -1,0 +1,28 @@
+<table class="outer" align="center">
+	<tr><td valign="middle">
+		<%- require('views/logo')() %>
+		<h1>games</h1>
+		<table class="inner" align="center">
+			<% for game in @games: %>
+			
+			<tr><td>
+				
+				<div class="game<%= if game.isMyTurn() then ' turn' %>" id="<%= game.id %>">
+					<table>
+						<tr>
+							<td rowspan="2" class="avatar"><img src="<%= game.opponent.avatar %>" /></td>
+							<td><div class="username"><%= game.opponent.username %></div></td>
+						</tr>
+						<tr><td class="rank">Rank: <%= game.opponent.rank %></td></tr>
+					</table>
+					<div class="color <%= if game.color is 'white' then 'black' else 'white' %>"></div>
+					<div class="star <%= if game.opponent.friend then 'selected' else 'unselected' %>"></div>
+					<div class="time"><%= $.timeago(new Date().setTime(game.updated)) %></div>
+				</div>
+				
+			</td></tr>
+			
+			<% end %>
+		</table>
+	</td></tr>
+</table>

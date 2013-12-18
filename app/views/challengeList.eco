@@ -1,0 +1,27 @@
+<table class="outer" align="center">
+	<tr><td valign="middle">
+		<%- require('views/logo')() %>
+		<h1>Challenges</h1>
+		<table class="inner" align="center">
+			<% for c in @challenges: %>
+			
+			<tr><td>
+				
+				<div class="challenge" id="<%= c.id %>">
+					<table>
+						<tr>
+							<td rowspan="2" class="avatar"><img src="<%= c.challenger.avatar %>" /></td>
+							<td class="username"><%= c.challenger.username %></td>
+						</tr>
+						<tr><td class="rank">Rank: <%= c.challenger.rank %></td></tr>
+					</table>
+					<div class="star <%= if c.challenger.friend then 'selected' else 'unselected' %>"></div>
+					<div class="time"><%= $.timeago(new Date().setTime(c.created)) %></div>
+				</div>
+				
+			</td></tr>
+			
+			<% end %>
+		</table>
+	</td></tr>
+</table>

@@ -1,0 +1,69 @@
+<table class="outer" align="center">
+	<tr><td valign="middle">
+		<%- require('views/logo')() %>
+		<h1>New Game</h1>
+		<table align="center" class="options">
+			<tr>
+				<td>
+					<h2>Board Size</h2><div class="info size-info"/>
+				</td>
+			</tr><tr>
+				<td>
+					<span class="button">
+						<div class="game-size"><%= @size %></div>
+					</span>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h2>Handicap</h2><div class="info handicap-info"/>
+				</td>
+			</tr><tr>
+				<td>
+					<span class="button">
+						<div class="handicap"><%= @handicap %></div>
+					</span>
+				</td>
+			</tr>
+		</table>
+
+		<% if @friends?.length: %>
+			<%- require('views/friendsList')({@friends}) %>
+		
+		<% else if @search: %>
+			
+			<%- require('views/search')({@searchResults, @query}) %>
+
+		<% else: %>
+
+			<table align="center" class="submit">
+				<tr>
+					<td colspan="4"><h2>Opponents</h2><div class="info opponent-info"/></td>
+				</tr>
+				<tr>
+					<td>
+						<span class="button">
+							<div class="favs" />
+						</span>
+					</td>
+					<td>
+						<span class="button">
+							<div class="random" />
+						</span>
+					</td>
+					<td>
+						<span class="button">
+							<div class="search" />
+						</span>
+					</td>
+					<td>
+						<span class="button">
+							<div class="ai" />
+						</span>
+					</td>
+				</tr>
+			</table>
+
+		<% end %>
+	</td></tr>
+</table>

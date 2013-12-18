@@ -1,0 +1,12 @@
+<table class="outer" align="center">
+	<tr><td valign="middle">
+		<table class="menu" align="center">
+			<tr><td align="center"><%- require('views/logo')() %></div></td></tr>
+			<tr><td align="center"><button onclick="document.location.hash = '#/create'">New Game</button></td></tr>
+			<tr><td align="center"><button onclick="document.location.hash = '#/games'">&nbsp;Games (<%= @gameCount or 0 %>)</button></td></tr>
+			<tr><td align="center"><button onclick="document.location.hash = '#/challenges'">Challenges (<%= @challengeCount or 0 %>)</button></td></tr>
+			<tr><td align="center"><button class="share">Invite a Friend</button></td></tr>
+			<tr><td align="center"><button onclick="document.location.hash = '#/settings'">Settings</button></td></tr>
+		</table>
+	</td></tr>
+</table>

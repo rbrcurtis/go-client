@@ -1,0 +1,42 @@
+<table align="center" class="opponent-info">
+	<tr>
+		<td>
+			<span class="button">
+				<div class="favs" />
+			</span>
+		</td>
+		<td>
+			Friends: opponents you've previously starred.
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="button">
+				<div class="random" />
+			</span>
+		</td>
+		<td>
+			Random: we'll pick an opponent for you that is about your skill level, based on the handicap you selected.
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="button">
+				<div  class="search" />
+			</span>
+		</td>
+		<td>
+			Search: search for an opponent by username, such as to find friends that you haven't starred yet.
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="button">
+				<div  class="ai" />
+			</span>
+		</td>
+		<td>
+			AI: A very basic AI to help you get used to the game. It will move randomly and only pass when you pass (ending the game).
+		</td>
+	</tr>
+</table>

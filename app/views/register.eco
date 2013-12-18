@@ -1,0 +1,28 @@
+<table class="outer" align="center">
+	<tr><td valign="middle">
+		<form id="welcomeForm">
+			<table class="register" align="center">
+				<tr><td align="center"><div class="logo"></div></td></tr>
+				<tr>
+					<td><input type="text" name="username" placeholder="Username" /></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="email" placeholder="Email" /></td>
+				</tr>
+				<tr>
+					<td><input type="password" name="password" placeholder="Password" /></td>
+				</tr>
+				<tr>
+					<td><input type="password" name="password2" placeholder="Confirm Password" /></td>
+				</tr>
+				<tr>
+					<td><span class="terms-text">I accept the <a href="#/terms">terms and conditions</a></span><input type="checkbox" id="terms" name="terms" /><label for="terms" class="check-img"></td>
+				</tr>
+				<tr>
+					<input type="hidden" name="invite" value="<%= @invite or '' %>" />
+					<td align="center"><input class="button" type="submit" value="Go"/></td>
+				</tr>
+			</table>
+		</form>
+	</td></tr>
+</table>

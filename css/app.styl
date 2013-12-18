@@ -1,0 +1,52 @@
+input[type=text], input[type=password]
+	// height: 10px
+	width: 100%
+	text-align: center
+	padding: 20px 0px
+	color: #797979
+	font-size: 1.2em
+	text-shadow: grey 0px 1px 5px
+	border: 1px solid black
+	vbg-gradient(#d6d6d6, #fcfffe)
+	
+button, .button, input[type=submit]
+	max-width: 270px
+	text-decoration: none 
+	vbg-gradient(#ddd, #666)
+	border: 2px solid black
+	font-size: 2em
+	color: white
+	text-shadow: black 0px 1px 3px
+
+	&:active
+		vbg-gradient(#666, #ddd)
+
+
+button[disabled]
+	vbg-gradient(#666, #666)
+	color: #aaa
+	text-shadow: none
+	
+	
+a.button
+	display: block
+	line-height: 65px
+	
+.logo
+	/*background: url('img/logo.png') no-repeat
+	background-size: 100% 100%
+	width: 281px
+	height: 66px*/
+
+	cursor: pointer
+
+	text-align:center
+	color: orange
+	font-style: italic
+	font-size: 3em
+	font-family: 'Gill Sans'
+	font-weight: 700
+	text-shadow: #333 0px 5px 5px
+	
+	&:before
+		content: 'Go Versus'

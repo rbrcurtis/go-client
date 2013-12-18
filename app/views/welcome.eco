@@ -1,0 +1,9 @@
+<table class="outer" align="center">
+	<tr><td valign="middle">
+		<table class="welcome" align="center">
+			<tr><td align="center"><div class="logo"></div></td></tr>
+			<tr><td align="center"><button onclick="document.location.hash = '#/welcome/register/<%= @invite or '' %>'">Register</button></td></tr>
+			<tr><td align="center"><button onclick="document.location.hash = '#/welcome/signin/<%= @invite or '' %>'">Signin</button></td></tr>
+		</table>
+	</td></tr>
+</table>

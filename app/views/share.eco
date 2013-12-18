@@ -1,0 +1,4 @@
+<%- require('views/logo')() %>
+<div class="text">Enter as many email addresses as you like, seperated by commas, and we'll invite them to come play a game with you.</div>
+<textarea class="share-to"></textarea>
+<button class="send">Send</button>

@@ -1,0 +1,136 @@
+<%- unless @isDevice then require('views/logo')() else '' %>
+<div id="peace-box">
+</div>
+<script type="text/javascript">
+(function() {
+if (true || (typeof me !== "undefined" && me !== null ? me.subscribed : void 0) || (typeof me !== "undefined" && me !== null ? me.created : void 0) > Date.now() - 1000 * 60 * 60 * 24 * 5) {
+  $('#peace-box').css('display','none')
+  return;
+}
+if (typeof _inmobi !== "undefined" && _inmobi !== null) {
+  
+  _inmobi.getNewAd(document.getElementById('peace-box'));
+  setTimeout(function() {
+    if (!$('#peace-box').children().length) {
+      $('#peace-box').html("<button onclick='document.location.hash=\"#/donate/\"'>Donate</button>");
+    }
+    return 1000;
+  });
+
+} else {
+  
+  if (typeof me !== "undefined" && me !== null) {
+  	$('#peace-box').html("<button onclick='document.location.hash=\"#/donate/"+me.id+"\"'>Donate</button>")
+  }
+  
+}
+})();
+</script>
+<div class="header">
+	<table>
+		<tr>
+			<td>
+				<div class="star <%= if @game.opponent.friend then 'selected' else 'unselected' %>"></div>
+			</td><td>
+				<div class="color <%= if @game.black?.id is @game.opponent?.id then 'black' else 'white' %>"></div>
+			</td><td>
+				<img class="avatar" src="<%= @game.opponent.avatar %>" />
+			</td><td>
+				<div class="<%= if @game.isMyTurn() then 'right' else 'left' %>" />
+			</td><td>
+				<img class="avatar" src="<%= me?.avatar %>" />
+			</td><td>
+				<div class="color <%= if @game.black?.id is @game.opponent?.id then 'white' else 'black' %>"></div>
+			</td><td>
+				<div class="confirm" />
+			</td>
+		</tr>
+		<% if @game.ended: %>
+		<tr>
+			<td colspan="7" style="font-color:white">
+				This game has ended. <%- @game.winner %> won, 
+				<% if @game.blackScore > @game.whiteScore: %>
+				<%- @game.blackScore %> to <%- @game.whiteScore %>
+				<% else: %>
+				<%- @game.whiteScore %> to <%- @game.blackScore %>
+				<% end %>
+			</td>
+		</tr>
+		<% end %>
+		<% if @game.passes is 1: %>
+		<tr>
+			<td colspan="7" style="font-color:white">
+				<%- if @game.turn is 'white' then @game.black.username else @game.white.username %> has passed.
+			</td>
+		</tr>
+		<% end %>
+	</table>
+</div>
+
+<table class="toggle" align="center">
+	<tr>
+		<td class="board<%- if @page is 'board' then ' selected' %>" onclick="window.location.hash='#/games/<%= @game.id %>'">Board</td>
+		<td class="chat<%- if @page is 'chat' then ' selected' %>" onclick="window.location.hash='#/games/<%= @game.id %>/chat'">Chat</td></tr>
+</table>
+
+<% if @page is 'board': %>
+
+
+	<div id="zoom-wrapper">
+		<table cellspacing="0" align="center" id="game-board">
+			<% for y in [0...@game.size]: %>
+				<tr>
+					<% for x in [0...@game.size]: %>
+						<% last = Number(@game?.lastMove?.x) is x and Number(@game?.lastMove?.y) is y %>
+						<td><div class="cell <%= @game.board[x][y] %><%= if last then ' last' else '' %>" id="<%= x %>|<%= y %>"></div></td>
+					<% end %>
+				</tr>
+			<% end %>
+		</table>
+	</div>
+	<% if @isDevice: %>
+	<table class="zoom-controls" align="center" cellspacing="0">
+		<tr>
+			<td><div class="zoom-in">  + </div></td>
+			<td><div class="zoom-out"> - </div></td>
+		</tr>
+	</table>
+	<% end %>
+
+
+<% else if @page is 'chat': %>
+	
+	<table class="chat-wrapper"><tr><td valign="top">
+
+		<div class="chats">
+			<table align="center">
+			<% for chat in @game.chats: %>
+				<% debug 'chat', 'rendering', chat %>
+				<tr><td class="avatar"><img src="<%= chat.user?.avatar %>&s=20" /></td><td><%= chat.text %></td></tr>
+			<% end %>
+			</table>
+		</div>
+
+	</td></tr>
+	<tr><td class="fucker">
+
+		<textarea class="chat-input"></textarea>
+	
+	</td></td></table>
+
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
